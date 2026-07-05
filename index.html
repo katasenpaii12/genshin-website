@@ -1,0 +1,163 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale =1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Raiden Shogun Wiki</title>
+  </head>
+  <body>
+    <nav>
+      <div class="left-nav">
+        <button>👤</button>
+        <button>+</button>
+      </div>
+
+      <div class="nav-center">
+        <a href="#">Home</a>
+        <a href="#" class="active">Search</a>
+        <a href="#">Message</a>
+        <span class="nav-slider"></span>
+      </div>
+
+      <div class="nav-right">
+        <button class="btn-login">Log in</button>
+        <button class="btn-signup">Sign up</button>
+      </div>
+    </nav>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <section class="hero">
+      <div class="ghost-layer">
+        <img id="ghost-img" src="pics/raiden.png" alt="raiden">
+      </div>
+      <div class="easter-egg" id="easter-egg">
+        <img src="pics/secret/pip.jfif" alt="">
+      </div>
+      <button class="arrow arrow-left" onclick="changeSlide(-1)">&lt;</button>
+      <div class="banner-wrapper">
+        <div class="banner-track" id="banner-track">
+          <div class="banner">
+            <div class="banner-doodle doodle-1"></div>
+            <div class="banner-doodle doodle-2"></div>
+            <div class="banner-doodle doodle-3"></div>
+            <div class="banner-doodle doodle-4"></div>
+
+            <div class="banner-text">
+              <div class="game-logo">
+                <img src="pics/logo.png" alt="logo">
+              </div>
+              <h1 id="char-name">Raiden Shogun</h1>
+              <p id="char-desc">The Electro Archon who rules over Inazuma with an iron fist, pursuing her ideal of Eternity.</p>
+              <a href="#" class="read-more" onclick="event.preventDefault();openModal('${slide.name}', '${slide.desc}')">Read More</a>
+            </div>
+
+            <div class="banner-image">
+              <img id="banner-img" src="pics/raiden.png" alt="Raiden Shogun">
+            </div>
+          </div>
+        </div>
+        <div class="pagination">
+          <span class="dot active" data-dot="0"></span>
+          <span class="dot" data-dot="1"></span>
+          <span class="dot" data-dot="2"></span>
+          <span class="dot" data-dot="3"></span>
+        </div>
+      </div>
+      <button class="arrow right-arrow" onclick="changeSlide(1)">&gt;</button>
+    </section>
+
+    <section class="content-grid">
+      <div class="col">
+        <h3 class="col-title">Artwork <span>&gt;</span></h3>
+        <div class="artwork stack">
+          <div class="art-thumb">
+            <img id="art1" src="pics/raif2.jpg" alt="" >
+          </div>
+          <div class="art-thumb">
+            <img id="art2" src="pics/raif3.jpg" alt="">
+          </div>
+        </div>
+        <button class="btn-viewmore" onclick="openGallery()">View More</button>
+      </div>
+
+      <div class="col">
+        <h3 class="col-title">Recent Search</h3>
+        <div class="search-stack">
+          <div class="search-pill" id="search1"><span>🔍</span> Raiden shogun build</div>
+          <div class="search-pill" id="search2"><span>🔍</span> Raiden shogun walpaper</div>
+          <div class="search-pill" id="search3"><span>🔍</span> Raiden shogun best teams</div>
+          <div class="search-pill" id="search4"><span>🔍</span> Raiden shogun weapons</div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="chibi-stack">
+          <div class="chibi-card" onclick="tripleClick()">
+            <img id="chibi1" src="pics/r1.png" alt="">
+          </div>
+          <div class="chibi-card chibi-light">
+            <img id="chibi2" src="pics/r2.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="info-stack" id="info-stack">
+          <div class="info-pill">
+            <div class="info-icon">
+              <img src="pics/electro.png" alt="">
+            </div>
+            <div class="info-text">
+              <strong>Electro Character</strong>
+              <p>Wields the power of lightning</p>
+            </div>
+          </div>
+          <div class="info-pill">
+            <div class="info-icon">
+              <img src="pics/inazuma.png" alt="">
+            </div>
+            <div class="info-text">
+              <strong>Inazuma</strong>
+              <p>Nation of Eternity</p>
+            </div>
+          </div>
+          <div class="info-pill">
+            <div class="info-icon">
+              <img src="pics/cons.png" alt="">
+            </div>
+            <div class="info-text">
+              <strong>Constellation</strong>
+              <p>Imperatrix Umbrosa</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <script src="script.js"></script>
+    <div class="modal-overlay" id="modal">
+      <div class="modal-box"> 
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <div class="modal-top">
+          <img id="modal-img" src="" alt="">
+          <div class="modal-info">  
+            <h2 id="modal-title">Title</h2>
+            <p id="modal-text">Text here</p>
+          </div>
+        </div>
+        <div class="modal-video" id="modal-video"></div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="gallery-modal">
+      <div class="modal-box gallery-box">
+        <button class="modal-close" onclick="closeGallery()">&times;</button>
+        <h2 id="gallery-title">Artwork</h2>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </div>
+  </body>
+</html>
